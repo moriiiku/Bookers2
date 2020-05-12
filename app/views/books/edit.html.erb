@@ -1,0 +1,24 @@
+ <h1>Editing Book</h1>
+
+<%= form_for(@book) do |f| %>
+ <%= render 'layouts/error_messages', model: f.object %>
+	<p>
+	    <%= f.label :title %> <br>
+	    <%= f.text_field :title %> <br>
+	</p>
+
+	<p>
+	    <%= f.label :opinion %> <br>
+	    <%= f.text_field :body %> <br>
+	</p>
+
+	<p>
+	    <%= f.submit %>
+	</p>
+
+	<%= link_to "Show",book_path(@book.id) %>
+
+	<%= link_to "Back",books_path %>
+
+<% end %>
+

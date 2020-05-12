@@ -1,0 +1,64 @@
+
+<div class="col-xs-3">
+  <h2>User info</h2>
+
+  <div class="profile-container">
+
+
+      <%= attachment_image_tag user, :profile_image,  format: 'jpeg', fallback: "no_image.jpg", size:"100x100" %>
+
+
+        <table class="table">
+            <tbody>
+
+              <tr>
+                <th>name</th>
+                <th class="profile-name"></th>
+                <th><%= user.name %></th>
+                <th colspan="3"></th>
+              </tr>
+
+              <tr>
+                <th>introduction</th>
+                <th class="introduction"></th>
+                <th><%= user.introduction %></th>
+                <th colspan="3"></th>
+              </tr>
+            </tbody>
+        </table>
+
+  </div>
+
+
+
+
+  <%= link_to "", edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_17172" %>
+
+
+
+
+  <h2>New book</h2>
+
+
+
+
+
+
+  <%= form_for(booknew) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+    <div class="field row"><h4>Title</h4>
+  <form>
+      <%= f.text_field :title, class: "col-xs-12 book_title" %>
+    </div>
+
+      <div class="field row">
+      <h4>Opinion</h4>
+        <%= f.text_area :body, class: "col-xs-12 book_body" %>
+      </div>
+      <div>
+        <%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
+      </div>
+  </form>
+  <% end %>
+
+</div>
